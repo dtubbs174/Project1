@@ -31,16 +31,16 @@ def main():
     '''
     while(True):
         optionSelected = menu()
-        if(optionSelected == 0):
+        if(optionSelected == 0):                                                #Exit application
             closeClient()
             break
-        if(optionSelected == 1):
+        if(optionSelected == 1):                                                #Create new account by loading an existing JSON file containing basic account info
             print('You have selected option 1 to load an account...')
             filename = input('Please enter account filename: ')
             loadAccount(filename)
             
             
-        elif(optionSelected == 2):
+        elif(optionSelected == 2):                                              #View an account using the account number
             print('You selected option 2 to view an account...')
             accountNum = int(input('Please enter your account number: '))
             account = viewAccount(accountNum)
@@ -50,13 +50,13 @@ def main():
             else:
                 input('The specified account was not found. \nPress ENTER key to return to menu.')
 
-        elif(optionSelected == 3):
+        elif(optionSelected == 3):                                              #Create an account by having the user enter basic details
             print('You have selected option 3 to create an account...')
             account = {}
             createAccount(account)
             
             
-        elif(optionSelected == 4):
+        elif(optionSelected == 4):                                              #Deposit an amount into an account
             print('You have selected option 4 to make a deposit ...')
             try:
                 accountNum = int(input("Which account number would you like to make a deposit to?: "))
@@ -65,8 +65,8 @@ def main():
             except ValueError as valError:
                 print(valError)
                 input('There was an error when selecting an account or selecting deposit amount. Deposit cancelled. \nMake sure to only enter numbers when selecting an account or entering deposit amount. \nPress ENTER key to return to menu.')
-            #input(f'Successfully deposited ${amount} into account number {accountNum}. \nPress ENTER key to return to menu.')
-        elif(optionSelected == 5):
+            
+        elif(optionSelected == 5):                                              #Withdraw an amount from an account
             print('You have selected option 5 to make a withdrawal...')
             try:
                 accountNum = int(input('Which account number would you like to make a withdraw from?: '))
@@ -75,8 +75,8 @@ def main():
             except ValueError as valError:
                 print(valError)
                 input('There was an error when selecting an account or selecting withdrawal amount. Withdrawal cancelled. \nMake sure to only enter numbers when selecting an account or entering withdrawal amount. \nPress ENTER key to return to menu.')
-            #input(f'Successfully withdrew ${amount} from account number {accountNum}. \nPress ENTER key to return to menu.')
-        elif(optionSelected == 6):
+            
+        elif(optionSelected == 6):                                              #Delete any account
             print('You have selected opotion 6 to delete an account...')
             try:
                 accountNum = int(input('Please enter an account number to delete: '))
