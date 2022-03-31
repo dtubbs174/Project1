@@ -1,4 +1,3 @@
-#from multiprocessing.sharedctypes import Value
 from cliFunctions import closeClient, loadAccount, viewAccount, createAccount, deposit, withdraw, deleteAccount, accountNumFound
 
 
